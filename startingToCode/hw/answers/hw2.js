@@ -24,7 +24,6 @@ function checkSameDuplicatedString(str){
             y+=1;
         }
     }
-    
    return x === y ;
     
 }
@@ -38,7 +37,7 @@ const duplicateApproach = checkSameDuplicatedString(str);
 function checkSameDuplicatedString1Liner(str){
     let x = y = 0;
     for (let i =0 ; i< str.length; i++){
-        str[i] === 'x' ? x += 1 : y +=1; 
+        str[i] === 'x' ? x += 1 : y += 1; 
     }
     return x === y; 
 }
@@ -67,16 +66,25 @@ const duplicateApproachBetterAlgo = checkSameDuplicatedStringBetterAlgo(str);
 // ++++ //
 
 
-// Defensing with unknown input // ;
+// Defensing with unknown input // ; [5,5]
 const sumValues = obj => Object.values(obj).reduce((a, b) => a + b, 0);
 
 function checkSameDuplicatedStringBetterAlgoDefense(str){
-    const tempObj = {};
+    const tempObj = {
+     
+    };
     let backWardIndex = str.length - 1 ;
     let splittedArray =( str.length % 2 === 0) ? str.length / 2 : str.length - 1 / 2 ;
     for (let i =0 ; i< splittedArray; i++){
-        isNaN(tempObj[str[i]] += 1) ? tempObj[str[i]] = 0 : tempObj[str[i]] += 1;
-        isNaN(tempObj[str[backWardIndex]] += 1) ? tempObj[str[backWardIndex]] = 0 : tempObj[str[backWardIndex]] += 1;
+        if ( tempObj[str[i]] ) {
+            tempObj[str[i]] += 1;
+        }
+        else {
+            tempObj[str[i]] = 1;
+        }
+        // isNaN( tempObj[str[i]] += 1 ) ? tempObj[str[i]] = 0 : tempObj[str[i]] += 1;
+                
+        // isNaN(tempObj[str[backWardIndex]] += 1) ? tempObj[str[backWardIndex]] = 0 : tempObj[str[backWardIndex]] += 1;
         backWardIndex -= 1;
     }
     const sumValue = sumValues(tempObj);

@@ -35,6 +35,7 @@ const obj = {
 };
 
 function calculate2(obj){
+    // [2,2,2]
     return Object.values(obj).reduce( (a,b)=>{ return a + b },0) / Object.keys(obj).length;
     
 }
