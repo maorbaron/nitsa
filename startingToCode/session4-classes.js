@@ -2,9 +2,9 @@ class Genesis {
     age = 30;
     color = 'red';
 
-    constructor(age,color){
-        this.age = age ? age : this.age;
-        this.color = color ? color: this.color;
+    constructor(ageInput,colorInput){
+        this.age = ageInput ? ageInput : this.age;
+        this.color = colorInput ? colorInput: this.color;
     }
     
     getNames(){
