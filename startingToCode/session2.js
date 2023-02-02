@@ -67,5 +67,11 @@ const winner = {
 // winner.price = 10000;
 // console.log(winner)
 
+// const pathArray = [1,2,0,3,4]
 
-
+// for (let i = 0; i < pathArray.length - 1; i++) {
+//     // undefined
+//     if (! pathArray[i]) { // null / undefined  / false / 0 
+//         console.log('WTF')
+//     }
+// }
